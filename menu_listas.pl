@@ -8,6 +8,7 @@ menu :- repeat,nl,nl,
     write('6. Unir dos listas A y B'), nl,
     write('7. Conteo de elementos en lista A'),nl,
     write('8. Sumatoria de los elementos de lista A'), nl,
+    write('9. Obtener la reversa de la lista B'),nl,
     write('               10.- para salir'),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
     read(Choice), Choice>0, Choice<10,
@@ -87,7 +88,7 @@ doit(7):-
 
 doit(8):-
 	write('Bienvenido a la opcion 8'),nl,
-	write('Suma de los elementos en lista A [1,2,3,4]'),nl,
+	write('Suma de los elementos en lista B [a,b,c,d]'),nl,
 	suma_lista([1,2,3,4], Sumatoria),
 	write('El numero de elementos es: '),
 	write(Sumatoria).
@@ -95,9 +96,16 @@ doit(8):-
 		suma_lista([],0).
 		suma_lista([X|L], N):- suma_lista(L,C), N is C+X.
 
-
-
 doit(9):-
+	write('Bienvenido a la opcion 9'),nl,
+	write('Lectura al revés de la lista B [a,b,c,d]'),nl,
+	reverse([1,2,3,4], Reversa), 
+	hori(Reversa).
+
+
+
+
+doit(100):-
 	nl,
 	write("---------------------------------"),nl,
 	write("Arnold Alois Schwarzenegger as Terminator says: See U Babe "),nl,
