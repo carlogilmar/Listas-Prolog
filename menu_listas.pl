@@ -5,6 +5,7 @@ menu :- repeat,nl,nl,
     write('3. Agregar un elemento al final'),nl,
     write('4. Agregar un elemento al inicio'), nl,
     write('5. Borrar un elemento de la lista A'), nl,
+    write('6. Unir dos listas A y B'), nl,
     write('               10.- para salir'),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
     read(Choice), Choice>0, Choice<10,
@@ -66,6 +67,11 @@ doit(5):-
 			    eliminar_elemento([X|C],X,C).
 			    eliminar_elemento([Y|C1],E,[Y|C2]):-eliminar_elemento(C1,E,C2).
 
+doit(6):-
+	write('Bienvenido a la opcion 6'),nl,
+	write('Uniendo la lista A [1,2,3,4] con la B [a,b,c,d]'),nl,
+	concatenar([1,2,3,4], [a,b,c,d], Union),
+	hori(Union).
 
 
 doit(9):-
