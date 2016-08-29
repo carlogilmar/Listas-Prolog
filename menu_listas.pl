@@ -7,6 +7,7 @@ menu :- repeat,nl,nl,
     write('5. Borrar un elemento de la lista A'), nl,
     write('6. Unir dos listas A y B'), nl,
     write('7. Conteo de elementos en lista A'),nl,
+    write('8. Sumatoria de los elementos de lista A'), nl,
     write('               10.- para salir'),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
     read(Choice), Choice>0, Choice<10,
@@ -83,6 +84,18 @@ doit(7):-
 
 		cuenta_elementos([],0).
 		cuenta_elementos([_|L],N):- cuenta_elementos(L,TAM), N is TAM+1.
+
+doit(8):-
+	write('Bienvenido a la opcion 8'),nl,
+	write('Suma de los elementos en lista A [1,2,3,4]'),nl,
+	suma_lista([1,2,3,4], Sumatoria),
+	write('El numero de elementos es: '),
+	write(Sumatoria).
+
+		suma_lista([],0).
+		suma_lista([X|L], N):- suma_lista(L,C), N is C+X.
+
+
 
 doit(9):-
 	nl,
