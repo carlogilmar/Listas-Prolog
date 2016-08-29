@@ -6,9 +6,9 @@ menu :- repeat,nl,nl,
     write('4. Agregar un elemento al inicio'), nl,
     write('5. Borrar un elemento de la lista A'), nl,
     write('6. Unir dos listas A y B'), nl,
-    write('               10.- para salir'),nl,
+    write('               7.- para salir'),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
-    read(Choice), Choice>0, Choice<10,
+    read(Choice), Choice>0, Choice<8,
     doit(Choice).
 
 doit(1):-
@@ -74,7 +74,7 @@ doit(6):-
 	hori(Union).
 
 
-doit(9):-
+doit(7):-
 	nl,
 	write("---------------------------------"),nl,
 	write("Arnold Alois Schwarzenegger as Terminator says: See U Babe "),nl,
