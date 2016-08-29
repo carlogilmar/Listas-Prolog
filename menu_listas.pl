@@ -4,9 +4,10 @@ menu :- repeat,nl,nl,
     write('2. Mostrar la lista A en vertical'),nl,
     write('3. Agregar un elemento al final'),nl,
     write('4. Agregar un elemento al inicio'), nl,
-    write('               5.- para salir           '),nl,
+    write('5. Borrar un elemento de la lista A'), nl,
+    write('               10.- para salir'),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
-    read(Choice), Choice>0, Choice<6,
+    read(Choice), Choice>0, Choice<10,
     doit(Choice).
 
 doit(1):-
@@ -54,8 +55,20 @@ doit(4):-
 
 			añadir_por_delante([X|Xs],E,R):-concatenar([E],[X|Xs],R).
 
-
 doit(5):-
+	write('Bienvenido a la opcion 5'),nl,
+	write('Borrar un elemento de la lista A [1,2,3,4]'),nl,
+	write('Dame el elemento a borrar-->'),
+	read(X),
+	eliminar_elemento([1,2,3,4],X,Nueva),
+	hori(Nueva).
+
+			    eliminar_elemento([X|C],X,C).
+			    eliminar_elemento([Y|C1],E,[Y|C2]):-eliminar_elemento(C1,E,C2).
+
+
+
+doit(9):-
 	nl,
 	write("---------------------------------"),nl,
 	write("Arnold Alois Schwarzenegger as Terminator says: See U Babe "),nl,
