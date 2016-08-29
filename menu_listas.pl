@@ -3,6 +3,7 @@ menu :- repeat,nl,nl,
     write('1. Mostrar lista A en horizontal'),nl,
     write('2. Mostrar la lista A en vertical'),nl,
     write('3. Agregar un elemento al final'),nl,
+    write('4. Agregar un elemento al inicio'), nl,
     write('               5.- para salir           '),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
     read(Choice), Choice>0, Choice<6,
@@ -44,7 +45,15 @@ doit(3):-
 		    añadir_por_detras([X|Xs],E,[X|Xz]):-concatenar(Xs,[E],Xz).
 
 doit(4):-
-	write('Bienvenido a la opcion 4').
+	write('Bienvenido a la opcion 4'),nl,
+	write('Agregar elemento al inicio de la lista A [1,2,3,4]'),nl,
+	write('Dame un elemento -->'),
+	read(X),
+	añadir_por_delante([1,2,3,4],X,Lista_nueva), 
+	hori(Lista_nueva).
+
+			añadir_por_delante([X|Xs],E,R):-concatenar([E],[X|Xs],R).
+
 
 doit(5):-
 	nl,
