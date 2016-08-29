@@ -9,9 +9,10 @@ menu :- repeat,nl,nl,
     write('7. Conteo de elementos en lista A'),nl,
     write('8. Sumatoria de los elementos de lista A'), nl,
     write('9. Obtener la reversa de la lista B'),nl,
-    write('               10.- para salir'),nl,
+    write('10. Obtener el ultimo elemento de la lista B'),nl,
+    write('               11.- para salir'),nl,
     write('Coloca el numero de opcion seguido de un punto final-->'),nl,nl,
-    read(Choice), Choice>0, Choice<10,
+    read(Choice), Choice>0, Choice<12,
     doit(Choice).
 
 doit(1):-
@@ -103,9 +104,18 @@ doit(9):-
 	hori(Reversa).
 
 
+doit(10):-
+	write('Bienvenido a la opcion 10'),nl,
+	write('Obteniendo el ultimo elemento de la lista B [a,b,c,d]'),nl,
+	ultimo(Element, [a,b,c,d]),
+	write('El ultimo elemento es: '),
+	write(Element).
+
+    		ultimo(E,[E|[]]).
+	    	ultimo(E,[_|C]):- ultimo(E,C).
 
 
-doit(100):-
+doit(11):-
 	nl,
 	write("---------------------------------"),nl,
 	write("Arnold Alois Schwarzenegger as Terminator says: See U Babe "),nl,
